@@ -29,6 +29,11 @@ namespace ConsoleAppLearning
             {
                 person.Introduce();
             }
+
+            //int a = 126724684;
+            //Console.WriteLine(a.ToString()[2]);
+            //string text = "Ermine";
+            //Console.WriteLine(text[1]);
         }
     }
 
