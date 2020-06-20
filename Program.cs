@@ -37,14 +37,10 @@ namespace ConsoleAppLearning
 
             //create some accounts here
             List<BankAccount> accounts = new List<BankAccount>();
-            accounts.Add(new BankAccount());
-            accounts[0].Owner = "Jenifer";
-            accounts[0].Number = "123456789";
-            accounts[0].Created = DateTime.Now;
-            accounts[0].Balance = 200;
-            accounts[0].Currency = "EUR";
+            accounts.Add(new BankAccount("Jenifer", 200, "EUR"));
             accounts[0].PrintInfo();
-
+            accounts.Add(new BankAccount("Anna", 5000, "EUR"));
+            accounts[1].PrintInfo();
         }
     }
 
