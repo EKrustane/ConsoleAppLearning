@@ -11,7 +11,18 @@ namespace ConsoleAppLearning
         
         public string Number { get; }
         public string Owner { get; }
-        public decimal Balance { get; }
+        public decimal Balance
+        {
+            get
+            {
+                decimal balance = 0;
+                foreach (var t in transactions)
+                {
+                    balance += t.Amount;
+                }
+                return balance;
+            }
+        }
         public DateTime Created { get; }
         public string Currency { get; }
 
