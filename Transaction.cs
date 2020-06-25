@@ -10,9 +10,11 @@ namespace ConsoleAppLearning
         public DateTime transactionDate { get; }
         public string Note { get; }
 
-        public Transaction()
+        public Transaction(decimal amount, string note)
         {
-
+            this.Amount = amount;
+            this.TransactionDate = DateTime.Now;
+            this.Note = note;
         }
     }
 }
