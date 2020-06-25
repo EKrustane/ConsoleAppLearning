@@ -9,6 +9,7 @@ namespace ConsoleAppLearning
     {
         private List<Transaction> transactions = new List<Transaction>();
         private static int accountNumber = 123;
+        private int count = 0;
 
         public string Number { get; }
         public string Owner { get; }
@@ -28,12 +29,14 @@ namespace ConsoleAppLearning
 
         public BankAccount(string owner, decimal balance, string currency)
         {
+            
             this.Number = accountNumber.ToString();
             accountNumber++;
             this.Owner = owner;
             this.MakeDeposit(balance, "Initial balance");
             this.Currency = currency;
             this.Created = DateTime.Now;
+            count++;
         }
 
         public void PrintInfo()
@@ -42,13 +45,22 @@ namespace ConsoleAppLearning
         }
         public void MakeDeposit(decimal amount, string note)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Amount must be positive");
+                return;
+            }
             Transaction deposit = new Transaction(amount, note);
             transactions.Add(deposit);
-            ShowAll(amount, note);
+            if (count>0)
+            {
+                ShowAllDeposits(amount, note);
+            }
+            
         }
         public void MakeWithdrawal(decimal amount, string note)
         {
-            if (amount < this.Balance)
+            if (amount < 0)
             {
                 Console.WriteLine("Amount must be positive");
                 return;
@@ -60,16 +72,18 @@ namespace ConsoleAppLearning
             }
             Transaction withdrawal = new Transaction(-amount, note);
             transactions.Add(withdrawal);
-            ShowAll(amount, note);
+            ShowAllWithdrawal(amount, note);
         }
-        public void ShowAll(decimal amount, string note)
+        public void ShowAllDeposits(decimal amount, string note)
         {
-            foreach(var transaction in transactions)
-            {
-                Console.WriteLine($"{amount} EUR is added to {this.Owner}'s account. Note: {note}.");
-                Console.WriteLine($"{amount} EUR is removed to {this.Owner}'s account. Note: {note}.");
-            }
+
+            Console.WriteLine($"{amount} EUR is added to {this.Owner}'s account. Note: {note}.");
+
             
+        }
+        public void ShowAllWithdrawal(decimal amount, string note)
+        {
+            Console.WriteLine($"{amount} EUR is removed from {this.Owner}'s account. Note: {note}.");
         }
     }
 }

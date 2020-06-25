@@ -9,9 +9,9 @@ namespace ConsoleAppLearning
         {
             List<Human> persons = new List<Human>();
             persons.Add(new Human("Jenifer","Lopez",25,"Brown"));
-            persons.Add(new Human("Anna", "Liepa", 16, "Blue"));
-            persons.Add(new Human("Mikelis", "Johnson", 14, "Green"));
-            persons.Add(new Human("Agnese", "Egle", 19, "Gray"));
+            //persons.Add(new Human("Anna", "Liepa", 16, "Blue"));
+            //persons.Add(new Human("Mikelis", "Johnson", 14, "Green"));
+            //persons.Add(new Human("Agnese", "Egle", 19, "Gray"));
 
             //persons[1].SetAge(15);
 
@@ -25,10 +25,10 @@ namespace ConsoleAppLearning
                 //persons[i].Introduce();
             //}
 
-            foreach(var person in persons)
-            {
-                person.Introduce();
-            }
+            //foreach(var person in persons)
+            //{
+                //person.Introduce();
+            //}
 
             //int a = 126724684;
             //Console.WriteLine(a.ToString()[2]);
@@ -38,8 +38,8 @@ namespace ConsoleAppLearning
             //create some accounts here
             List<BankAccount> accounts = new List<BankAccount>();
             accounts.Add(new BankAccount("Jenifer", 200, "EUR"));
-            accounts.Add(new BankAccount("Anna", 5000, "EUR"));
-            accounts.Add(new BankAccount("Mikelis", 30, "EUR"));
+            //accounts.Add(new BankAccount("Anna", 5000, "EUR"));
+            //accounts.Add(new BankAccount("Mikelis", 30, "EUR"));
             foreach (var account in accounts)
             {
                 account.PrintInfo();
@@ -49,9 +49,10 @@ namespace ConsoleAppLearning
             accounts[0].MakeDeposit(100, "Birthday gift");
             accounts[0].MakeDeposit(400, "First salary");
             accounts[0].MakeDeposit(50, "Bonus");
-            Console.WriteLine(accounts[0].Balance);
-            accounts[0].MakeWithdrawal(1500, "Online course");
-            Console.WriteLine(accounts[0].Balance);
+            accounts[0].MakeWithdrawal(150, "Online course");
+            accounts[0].MakeDeposit(500, "Salary");
+            accounts[0].MakeWithdrawal(350, "Shopping");
+            Console.WriteLine($"Jeniffer's account balance NOW is {accounts[0].Balance} EUR.");
             
         }
     }
