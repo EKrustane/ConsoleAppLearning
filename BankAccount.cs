@@ -32,7 +32,7 @@ namespace ConsoleAppLearning
             this.Number = accountNumber.ToString();
             accountNumber++;
             this.Owner = owner;
-            this.Balance = balance;
+            this.MakeDeposit(balance, "Initial balance");
             this.Currency = currency;
             this.Created = DateTime.Now;
         }
