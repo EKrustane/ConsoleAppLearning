@@ -7,6 +7,7 @@ namespace ConsoleAppLearning
 {
     class BankAccount
     {
+        private List<Transaction> transactions = new List<Transaction>();
         private static int accountNumber = 123;
         
         public string Number { get; }
