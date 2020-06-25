@@ -29,5 +29,9 @@ namespace ConsoleAppLearning
         {
             Console.WriteLine($"Account number {this.Number} created on {this.Created.ToShortDateString()} belongs to {this.Owner} with a balance {this.Balance}{this.Currency}");
         }
+        public void MakeDeposit(decimal amount)
+        {
+
+        }
     }
 }
