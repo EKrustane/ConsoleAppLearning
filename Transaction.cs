@@ -7,7 +7,7 @@ namespace ConsoleAppLearning
     class Transaction
     {
         public decimal Amount {get; }
-        public DateTime transactionDate { get; }
+        public DateTime TransactionDate { get; }
         public string Note { get; }
 
         public Transaction(decimal amount, string note)
