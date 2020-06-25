@@ -7,12 +7,14 @@ namespace ConsoleAppLearning
     class Transaction
     {
         public decimal Amount {get; }
-        public DateTime transactionDate { get; }
+        public DateTime TransactionDate { get; }
         public string Note { get; }
 
-        public Transaction()
+        public Transaction(decimal amount, string note)
         {
-
+            this.Amount = amount;
+            this.TransactionDate = DateTime.Now;
+            this.Note = note;
         }
     }
 }
