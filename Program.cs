@@ -9,7 +9,7 @@ namespace ConsoleAppLearning
         {
             List<Human> persons = new List<Human>();
             persons.Add(new Human("Jenifer","Lopez",25,"Brown"));
-            //persons.Add(new Human("Anna", "Liepa", 16, "Blue"));
+            persons.Add(new Human("Anna", "Liepa", 16, "Blue"));
             //persons.Add(new Human("Mikelis", "Johnson", 14, "Green"));
             //persons.Add(new Human("Agnese", "Egle", 19, "Gray"));
 
@@ -38,7 +38,7 @@ namespace ConsoleAppLearning
             //create some accounts here
             List<BankAccount> accounts = new List<BankAccount>();
             accounts.Add(new BankAccount("Jenifer", 200, "EUR"));
-            //accounts.Add(new BankAccount("Anna", 5000, "EUR"));
+            accounts.Add(new BankAccount("Anna", 5000, "EUR"));
             //accounts.Add(new BankAccount("Mikelis", 30, "EUR"));
             foreach (var account in accounts)
             {
@@ -52,8 +52,12 @@ namespace ConsoleAppLearning
             accounts[0].MakeWithdrawal(150, "Online course");
             accounts[0].MakeDeposit(500, "Salary");
             accounts[0].MakeWithdrawal(350, "Shopping");
-            Console.WriteLine($"Jeniffer's account balance NOW is {accounts[0].Balance} EUR.");
-            
+            Console.WriteLine($"Jenifer's account balance NOW is {accounts[0].Balance} EUR.");
+            Console.WriteLine("");
+            //make some transactions on Anna's account
+            accounts[1].MakeDeposit(500, "Bonus");
+            accounts[1].MakeWithdrawal(350, "Shopping");
+            Console.WriteLine($"Anna's account balance NOW is {accounts[1].Balance} EUR.");
         }
     }
 
